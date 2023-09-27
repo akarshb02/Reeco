@@ -11,7 +11,6 @@ const AddItems = () => {
 
  const myState = useSelector((state) => state.messageStatus)
  const dispatch = useDispatch()
- console.log(myState.APPROVAL == 'APPROVAL' ? console.log("app") : console.log("no"));
 
  const handleSearch =
   Object.values(ProductDetails).filter((item) => item.description && item.description.toLowerCase().includes(search))
@@ -75,9 +74,9 @@ const AddItems = () => {
          <p>{item}</p>
          {item == 'Status' &&
           <div className='flex justify-evenly'>
-           {myState.MISSING ? <div className=' bg-red-500 text-xs rounded-xl p-1'>{myState.MISSING}</div> : <div className=' bg-green-500 text-xs rounded-xl p-1'>{myState.APPROVAL}</div>}
-           {<button onClick={() => dispatch(actionApproval("APPROVAL"))}><CheckIcon className='w-5 h-5' /></button>}
-           {<button onClick={() => dispatch(actionMissing("MISSING"))}>X
+           {myState.MISSING ? <div className=' bg-red-500 text-xs  rounded-xl p-1.5'>{myState.MISSING}</div> : <div className=' bg-green-500 text-xs rounded-xl p-1.5'>{myState.APPROVAL}</div>}
+           {<button onClick={() => dispatch(actionApproval("APPROVAL"))}><CheckIcon className={myState.APPROVAL ? "text-green-500 w-5 h-5" : "w-5 h-5"} /></button>}
+           {<button onClick={() => dispatch(actionMissing("MISSING"))}><span className={myState.MISSING && "text-red-500 w-5 h-5"}>X</span>
            </button>}
            <button><Popup buttonTxt="Edit" /></button>
           </div>
