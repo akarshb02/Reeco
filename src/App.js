@@ -25,37 +25,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const App = () => {
-//   const myState = useSelector((state) => state.changeTheNumber)
-//   const dispatch = useDispatch()
-//   return (
-//     <div className='App'>
-//       <h1>Increment/Decrement counter</h1>
-//       <h4>using React and Redux</h4>
-//       <button id="dec" onClick={() => dispatch(decNumber(5))}>-</button>
-//       <input name='quality' type='text' class="value" value={myState} />
-//       <button id="inc" onClick={() => dispatch(incNumber(5))}>+</button>
-
-//     </div>
-//   );
-// }
-
-// export default App;
